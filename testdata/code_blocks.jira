@@ -1,0 +1,21 @@
+Code blocks
+
+{{Try to confuse things with monospace.}}
+
+{code}
+func main(){}
+{code}
+
+Another code block (since >1 used to break)
+
+{code:go}
+func main(){}
+{code}
+
+One more:
+
+{code:python}
+def main(self):
+		print "tabbed"
+{code}
+

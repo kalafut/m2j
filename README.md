@@ -8,6 +8,9 @@ frequently seen in Github issues.
 # Progress
 - [x] Headings (h1-h6)
 - [x] Basic text formatting (bold/italics/mono)
+- [x] Code blocks
+- [ ] Unordered lists
+- [ ] Ordered lists
 - [ ] Tables
 
 # Credits
