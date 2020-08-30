@@ -7,6 +7,8 @@ frequently seen in Github issues.
 
 # Progress
 - [x] Headings (h1-h6)
+- [x] Basic text formatting (bold/italics/mono)
+- [ ] Tables
 
 # Credits
 * https://github.com/StevenACoffman/j2m for the basic structure that I based this library on.
