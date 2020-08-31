@@ -1,4 +1,4 @@
-# m2j
+# m2j [![Build Status](https://travis-ci.org/kalafut/m2j.svg?branch=master)](https://travis-ci.org/kalafut/m2j)
 
 This library will convert Markdown into [Jira's text formatting](https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=all).
 It is a simple regex-based library built to help migrate Github issues into Jira, and it is therefore
