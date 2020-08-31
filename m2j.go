@@ -34,8 +34,8 @@ func MDToJira(str string) string {
 			//re: regexp.MustCompile("(?s)```(.+\n)?((?:.|\n)*?)```"),
 			re: regexp.MustCompile("(?s)```(.+?\n)?(.*?)```"),
 			repl: func(groups []string) string {
-				// If there is syntax, it will be in group[1], and content in group[2].
-				// Otherwise, content is in group[1] and group[2] is empty.
+				// If there is syntax, it will be in groups[1], and content in groups[2].
+				// Otherwise, content is in groups[1] and groups[2] is empty.
 
 				if groups[2] == "" {
 					return "{code}" + groups[1] + "{code}"
@@ -61,6 +61,21 @@ func MDToJira(str string) string {
 		{ // named links
 			re:   regexp.MustCompile(`\[([^\]]+)\]\(([^)]+)\)`),
 			repl: "[$1|$2]",
+		},
+		{ // unordered lists
+			re: regexp.MustCompile(`(?m)^([ \t]*)\*\s+`),
+			repl: func(groups []string) string {
+				indent := 0
+				indentStr := groups[1]
+				if indentStr != "" {
+					if string(indentStr[0]) == " " {
+						indent = len(indentStr) / 2
+					} else {
+						indent = len(indentStr)
+					}
+				}
+				return strings.Repeat("*", indent+1) + " "
+			},
 		},
 	}
 	for _, jiration := range jirations {
