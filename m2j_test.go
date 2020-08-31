@@ -13,6 +13,7 @@ func TestMDToJira(t *testing.T) {
 		"headings",
 		"text_styles",
 		"code_blocks",
+		"links",
 	}
 
 	for _, test := range tests {

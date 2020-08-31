@@ -54,6 +54,14 @@ func MDToJira(str string) string {
 				return fmt.Sprintf("h%d. ", len(groups[1]))
 			},
 		},
+		{ // unnamed links
+			re:   regexp.MustCompile(`<([^>]+?)>`),
+			repl: "[$1]",
+		},
+		{ // named links
+			re:   regexp.MustCompile(`\[([^\]]+)\]\(([^)]+)\)`),
+			repl: "[$1|$2]",
+		},
 	}
 	for _, jiration := range jirations {
 		switch v := jiration.repl.(type) {

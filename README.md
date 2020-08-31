@@ -9,6 +9,7 @@ frequently seen in Github issues.
 - [x] Headings (h1-h6)
 - [x] Basic text formatting (bold/italics/mono)
 - [x] Code blocks
+- [x] Links
 - [ ] Unordered lists
 - [ ] Ordered lists
 - [ ] Tables

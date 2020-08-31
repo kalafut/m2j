@@ -1,0 +1,10 @@
+h1. Links
+
+This is a plain link which should be left as is (I think)? https://github.com
+
+Here is an autolink: [https://github.com]
+
+And here's a named link: [Some text|https://example.com]
+
+Reference links aren't supported yet.
+
