@@ -21,3 +21,10 @@ h3. Space indented
 * Back to top level
 
 And some text after.
+
+h2. Ordered
+
+# First
+# Second
+# Third multiple words
+## Indented

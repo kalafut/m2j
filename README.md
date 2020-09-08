@@ -10,8 +10,8 @@ frequently seen in Github issues.
 - [x] Basic text formatting (bold/italics/mono)
 - [x] Code blocks
 - [x] Links
-- [ ] Unordered lists
-- [ ] Ordered lists
+- [x] Unordered lists
+- [x] Ordered lists
 - [ ] Tables
 
 # Credits

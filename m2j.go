@@ -77,6 +77,21 @@ func MDToJira(str string) string {
 				return strings.Repeat("*", indent+1) + " "
 			},
 		},
+		{ // ordered lists
+			re: regexp.MustCompile(`(?m)^([ \t]*)\d+[.)]\s+`),
+			repl: func(groups []string) string {
+				indent := 0
+				indentStr := groups[1]
+				if indentStr != "" {
+					if string(indentStr[0]) == " " {
+						indent = len(indentStr) / 2
+					} else {
+						indent = len(indentStr)
+					}
+				}
+				return strings.Repeat("#", indent+1) + " "
+			},
+		},
 	}
 	for _, jiration := range jirations {
 		switch v := jiration.repl.(type) {
