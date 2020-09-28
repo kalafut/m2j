@@ -32,15 +32,14 @@ func MDToJira(str string) string {
 		},
 		{ // code blocks
 			//re: regexp.MustCompile("(?s)```(.+\n)?((?:.|\n)*?)```"),
-			re: regexp.MustCompile("(?s)```(.+?\n)?(.*?)```"),
+			re: regexp.MustCompile("(?s)```([\\w\t ]*)\n(.*?)```"),
 			repl: func(groups []string) string {
-				// If there is syntax, it will be in groups[1], and content in groups[2].
-				// Otherwise, content is in groups[1] and groups[2] is empty.
-
-				if groups[2] == "" {
-					return "{code}" + groups[1] + "{code}"
+				language := groups[1]
+				body := groups[2]
+				if language == "" {
+					return "{code}\n" + body + "{code}"
 				} else {
-					return fmt.Sprintf("{code:%s}\n", strings.TrimSpace(groups[1])) + groups[2] + "{code}"
+					return fmt.Sprintf("{code:%s}\n%s{code}", strings.TrimSpace(language), body)
 				}
 			},
 		},
@@ -114,7 +113,11 @@ func replaceAllStringSubmatchFunc(re *regexp.Regexp, str string, repl func([]str
 	for _, v := range re.FindAllSubmatchIndex([]byte(str), -1) {
 		groups := []string{}
 		for i := 0; i < len(v); i += 2 {
-			groups = append(groups, str[v[i]:v[i+1]])
+			if v[i] == -1 || v[i+1] == -1 {
+				groups = append(groups, "")
+			} else {
+				groups = append(groups, str[v[i]:v[i+1]])
+			}
 		}
 
 		result += str[lastIndex:v[0]] + repl(groups)
