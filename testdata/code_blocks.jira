@@ -19,3 +19,9 @@ def main(self):
 		print "tabbed"
 {code}
 
+Multiple lines, no language annotation:
+
+{code}
+first line
+second line
+{code}

@@ -14,8 +14,14 @@ func main(){}
 
 One more:
 
-```python
+```python 	
 def main(self):
 		print "tabbed"
 ```
 
+Multiple lines, no language annotation:
+
+```
+first line
+second line
+```
