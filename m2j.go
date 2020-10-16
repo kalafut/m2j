@@ -13,6 +13,10 @@ type jiration struct {
 
 // MDToJira takes a string in Github Markdown, and outputs Jira text styling
 func MDToJira(str string) string {
+	// normalize any CR-LF into LF
+	lineEndingRE := regexp.MustCompile(`\r?\n`)
+	str = lineEndingRE.ReplaceAllString(str, "\n")
+
 	jirations := []jiration{
 		{ // bold and italics
 			re: regexp.MustCompile(`([*_]{1,2})(\S.*?)([*_]{1,2})`),
