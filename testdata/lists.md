@@ -26,5 +26,5 @@ And some text after.
 
 1. First
 1. Second
-1) Third multiple words
-  1. Indented
+1. Third multiple words
+    1. Indented

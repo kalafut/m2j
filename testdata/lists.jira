@@ -1,9 +1,6 @@
-h1. Lists
-
-h2. Unordered
-
-h3. Tab indented
-
+h1. {anchor:lists}Lists
+h2. {anchor:unordered}Unordered
+h3. {anchor:tab-indented}Tab indented
 * Top Level
 * Line 2
 ** Indented
@@ -11,8 +8,7 @@ h3. Tab indented
 *** More indented
 * Back to top level
 
-h3. Space indented
-
+h3. {anchor:space-indented}Space indented
 * Top Level
 * Line 2
 ** Indented
@@ -22,8 +18,7 @@ h3. Space indented
 
 And some text after.
 
-h2. Ordered
-
+h2. {anchor:ordered}Ordered
 # First
 # Second
 # Third multiple words

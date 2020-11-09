@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestMDToJira(t *testing.T) {
@@ -16,6 +17,7 @@ func TestMDToJira(t *testing.T) {
 		"links",
 		"lists",
 		"crlf",
+		"comments",
 	}
 
 	for _, test := range tests {
@@ -28,7 +30,8 @@ func TestMDToJira(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			output := MDToJira(string(input))
+			output, err := MDToJira(string(input))
+			require.NoError(t, err)
 			assert.Equal(t, string(expected), output, "mismatched output for %q", test)
 		})
 	}

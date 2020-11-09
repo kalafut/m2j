@@ -1,19 +1,12 @@
 Hello
 
-h1. My H1
-
-h2. My H2
-
-h3. My H3
-
-h4. My H4
-
-h5. My H5
-
-h6. My H6
-
+h1. {anchor:my-h1}My H1
+h2. {anchor:my-h2}My H2
+h3. {anchor:my-h3}My H3
+h4. {anchor:my-h4}My H4
+h5. {anchor:my-h5}My H5
+h6. {anchor:my-h6}My H6
 ####### There is no H7
 
- # Ignored
-
+h1. {anchor:not-ignored}Not ignored
 end

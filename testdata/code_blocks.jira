@@ -2,26 +2,23 @@ Code blocks
 
 {{Try to confuse things with monospace.}}
 
-{code}
+{code:java}
 func main(){}
 {code}
-
-Another code block (since >1 used to break)
+Another code block \(since >1 used to break)
 
 {code:go}
 func main(){}
 {code}
-
 One more:
 
 {code:python}
 def main(self):
-		print "tabbed"
+        print "tabbed"
 {code}
-
 Multiple lines, no language annotation:
 
-{code}
+{code:java}
 first line
 second line
 {code}
